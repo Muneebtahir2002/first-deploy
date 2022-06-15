@@ -19,8 +19,8 @@ function App() {
       <TopMenu />
       <div style={{ padding: "10px" }}>
         <Switch>
-          <Route path="/products/new" component={NewProduct} />
-          <Route path="/products/update/:id" component={UpdateProducts} />
+          <Route path="/products/new" exact component={NewProduct} />
+          <Route path="/products/update/:id" exact component={UpdateProducts} />
           <Route path="/products/:page?" component={Products} />
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/register" component={Register} />

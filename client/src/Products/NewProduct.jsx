@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import axios from "axios";
 import productsservice from "../services/Productservice";
 import Auth from "../components/Auth";
 const NewProduct = (props) => {
@@ -12,7 +11,7 @@ const NewProduct = (props) => {
       <Grid>
         <Grid container spacing={3}>
           <Grid item xs={3}>
-            <h2>Add New Product</h2>
+            <h2>Add new products</h2>
             <TextField
               label="Name"
               variant="standard"

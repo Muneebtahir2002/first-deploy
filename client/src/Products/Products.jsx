@@ -29,7 +29,7 @@ const Handleproducts = (props) => {
 
   React.useEffect(GetData, [page, perPage]);
   const Handlebuttonclick = () => {
-    props.history.push("/products/new");
+    props.history.push("/products/newproducts");
   };
   return (
     <div>
@@ -37,6 +37,7 @@ const Handleproducts = (props) => {
         style={{ width: "100px", height: "30px" }}
         value={perPage}
         onChange={(e) => setperPage(e.target.value)}
+        multiple={true}
       >
         <option value="2">two</option>
         <option value="10">ten</option>

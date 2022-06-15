@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import axios from "axios";
 import productsservice from "../services/Productservice";
 import Admin from "../components/Admin";
 const UpdateProducts = (props) => {
