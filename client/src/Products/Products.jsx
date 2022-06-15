@@ -29,7 +29,7 @@ const Handleproducts = (props) => {
 
   React.useEffect(GetData, [page, perPage]);
   const Handlebuttonclick = () => {
-    props.history.push("/products/newproducts");
+    props.history.push("/products/new");
   };
   return (
     <div>
