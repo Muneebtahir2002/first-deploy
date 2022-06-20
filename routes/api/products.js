@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 //update a record
-router.put("/:id", auth, admin, async (req, res) => {
+router.put("/:id", validateProduct, auth, admin, async (req, res) => {
   let product = await Product.findById(req.params.id);
   product.name = req.body.name;
   product.price = req.body.price;
@@ -34,12 +34,12 @@ router.put("/:id", auth, admin, async (req, res) => {
   return res.send(product);
 });
 //update a record
-router.delete("/:id", auth, admin, async (req, res) => {
+router.delete("/:id", validateProduct, auth, admin, async (req, res) => {
   let product = await Product.findByIdAndDelete(req.params.id);
   return res.send(product);
 });
 //Insert a record
-router.post("/", auth, async (req, res) => {
+router.post("/", validateProduct, auth, async (req, res) => {
   let product = new Product();
   product.name = req.body.name;
   product.price = req.body.price;
