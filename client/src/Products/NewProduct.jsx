@@ -39,7 +39,7 @@ const NewProduct = (props) => {
           });
         }}
       >
-        Add
+        Add product
       </Button>
     </Grid>
   );
