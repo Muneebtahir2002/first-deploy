@@ -4,7 +4,7 @@ const validateProduct = require("../../middlewares/validateProduct");
 const auth = require("../../middlewares/auth");
 const admin = require("../../middlewares/admin");
 var { Product } = require("../../models/product");
-//get products
+
 router.get("/", async (req, res) => {
   console.log(req.user);
   let page = Number(req.query.page ? req.query.page : 1);
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   let total = await Product.countDocuments();
   return res.send({ total, products });
 });
-//get single products
+
 router.get("/:id", async (req, res) => {
   try {
     let product = await Product.findById(req.params.id);
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
     return res.status(400).send("Invalid ID"); // format of id is not correct
   }
 });
-//update a record
+
 router.put("/:id", validateProduct, auth, admin, async (req, res) => {
   let product = await Product.findById(req.params.id);
   product.name = req.body.name;
@@ -33,12 +33,12 @@ router.put("/:id", validateProduct, auth, admin, async (req, res) => {
   await product.save();
   return res.send(product);
 });
-//update a record
+
 router.delete("/:id", validateProduct, auth, admin, async (req, res) => {
   let product = await Product.findByIdAndDelete(req.params.id);
   return res.send(product);
 });
-//Insert a record
+
 router.post("/", validateProduct, auth, async (req, res) => {
   let product = new Product();
   product.name = req.body.name;
