@@ -1,4 +1,4 @@
 {
-  "db": "mongodb://127.0.0.1/productscrud",
+  "db": "mongodb://localhost/productscrud",
   "jwtPrivateKey": "SomePrivateKey"
 }
